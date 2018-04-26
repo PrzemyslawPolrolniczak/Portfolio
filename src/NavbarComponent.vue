@@ -1,12 +1,7 @@
 <!--NavbarComponent.vue-->
 <template>
     <nav>
-        <div class="tab">Intro<i class="fas fa-home"></i></div>
-        <div class="tab">O mnie<i class="fas fa-user-circle"></i></div>
-        <div class="tab">Projekty<i class="fas fa-briefcase"></i></div>
-        <div class="tab">Linki</div>
-        <div class="tab">Kontakt</div>
-        <div class="tab">ENG</div>        
+        <div class="tab" v-for="tab in tabs" :key="tab.id">{{tab.text}}<i class="fas" :class="tab.icon"></i></div>        
     </nav>
 </template>
 
@@ -14,7 +9,16 @@
     module.exports = {
         name: 'NavbarComponent',
         data(){
-            return {}
+            return {
+                tabs: [
+                    {text: 'Intro', icon: 'fa-home'},
+                    {text: 'O mnie', icon: 'fa-user-circle'},
+                    {text: 'Projekty', icon: 'fa-briefcase'},
+                    {text: 'Linki', icon: 'fa-link'},
+                    {text: 'Kontakt', icon: 'fa-envelope'},
+                    {text: 'English', icon: 'fa-language'},                    
+                ]
+            }
         }
     }
 </script>
@@ -24,7 +28,8 @@
     nav {
         position: fixed;
         // background-color: #2c3e50;
-        background-color: #212121;
+        background-color: #31373c;
+        // background-color: #31373c;
         display: flex;
         flex-direction: column;
         // justify-content: space-around;
@@ -33,7 +38,7 @@
         bottom: 0;
         width: 150px;
         .tab {
-            background-color: #212121;
+            background-color: #31373c;            
             height: 12vh;
             display: flex;
             justify-content: center;
@@ -42,10 +47,18 @@
             transition: all 0.5s;
             cursor: pointer;
             &:hover {
-                background-color: red;
+                background-color: #212121;
+                padding-left: 20px;
+            }
+            &:last-of-type {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
             }
             i {
                 font-size: 3em;
+                margin-bottom: 5px;
             }
         }
     }
