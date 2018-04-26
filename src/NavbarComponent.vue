@@ -41,18 +41,14 @@
 <style scoped lang="scss">
     nav {
         position: fixed;
-        // background-color: #2c3e50;
         background-color: #31373c;
-        // background-color: #31373c;
         display: flex;
         flex-direction: column;
-        // justify-content: space-around;
         left: 0;
         top: 0;
         bottom: 0;
         width: 150px;
         .tab {
-            background-color: #31373c;            
             height: 12vh;
             display: flex;
             justify-content: center;
@@ -62,6 +58,7 @@
             cursor: pointer;
             &:hover {
                 padding-left: 20px;
+                background-color: #212121;
             }
             &:last-of-type {
                 position: absolute;
@@ -85,21 +82,21 @@
             &.active {
                 cursor: initial;
                 padding-left: 20px;
-                background-color: #212121;
+                color: #31373c !important;
                 &.blue {
-                    color: #00B3FF; //55C1FF
+                    background-color: rgba($color: #00B3FF, $alpha: 1.0)
                 }
                 &.red {
-                    color: #EF233C;
+                    background-color: rgba($color: #EF233C, $alpha: 1.0)
                 }
                 &.green {
-                    color: #91CB3E;
+                    background-color: rgba($color: #91CB3E, $alpha: 1.0)
                 }
                 &.yellow {
-                    color: #F5B700;
+                    background-color: rgba($color: #F5B700, $alpha: 1.0)
                 }
                 &.default {
-                    color: #fff;
+                    background-color: rgba($color: #FFF, $alpha: 1.0)
                 }
             }
             &.blue:hover {
