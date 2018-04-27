@@ -4,10 +4,10 @@
 
 <script>
     module.exports= {
-        name:"PageHeadingComponent",
+        name:"ProjectsComponent",
         data (){
             return {
-                title:"ACME's Staff List"
+                title:"Projects"
             }
         }
     }

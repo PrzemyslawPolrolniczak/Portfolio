@@ -3,7 +3,7 @@
     <nav>
         <div class="tab"
             :class="[tab.color, tab.isActive]"
-            @click="toggleActive(tab)" 
+            @click="toggleActive(tab), changeTab(tab)" 
             v-for="tab in tabs" 
             :key="tab.id">
             {{tab.text}}
@@ -19,12 +19,12 @@
         data(){
             return {
                 tabs: [
-                    {text: 'Intro', icon: 'fa-home', color:'default', isActive: 'active'},
-                    {text: 'O mnie', icon: 'fa-user-circle', color:'blue', isActive: ''},
-                    {text: 'Projekty', icon: 'fa-briefcase', color:'red', isActive: ''},
-                    {text: 'Linki', icon: 'fa-link', color:'green', isActive: ''},
-                    {text: 'Kontakt', icon: 'fa-envelope', color:'yellow', isActive: ''},
-                    {text: 'English', icon: 'fa-language', color:'', isActive: ''},
+                    {text: 'Intro', icon: 'fa-home', color:'default', isActive: 'active', href: 'intro-component'},
+                    {text: 'O mnie', icon: 'fa-user-circle', color:'blue', isActive: '', href: 'about-component'},
+                    {text: 'Projekty', icon: 'fa-briefcase', color:'red', isActive: '', href: 'projects-component'},
+                    {text: 'Linki', icon: 'fa-link', color:'green', isActive: '', href: 'links-component'},
+                    {text: 'Kontakt', icon: 'fa-envelope', color:'yellow', isActive: '', href: 'contact-component'},
+                    {text: 'English', icon: 'fa-language', color:'', isActive: '', href: 'english'},
                 ],
                 toggleActive(tab) {
                     this.tabs.forEach(element => {
@@ -32,6 +32,11 @@
                     });
                     tab.isActive = 'active';
                 }
+            }
+        },
+        methods: {
+            changeTab(tab) {
+                this.$emit('changeTab', tab.href);
             }
         }
     }

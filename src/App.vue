@@ -1,24 +1,30 @@
 <template>
   <div id="app">
-    <navbar-component></navbar-component>
-    <img src="./assets/logo.png">
-    <h1>{{ title }}</h1>
-    <h2>{{ subtitle }}</h2>
+    <navbar-component v-on:changeTab="updateView($event)"></navbar-component>
+    <component :is="component"></component>
   </div>
 </template>
 
 <script>
   import PageHeadingComponent from './PageHeadingComponent.vue'
-  import StaffListComponent from './StaffListComponent.vue'
+  import IntroComponent from './IntroComponent.vue'
   import NavbarComponent from './NavbarComponent.vue'
+  import AboutComponent from './AboutComponent.vue'
+  import ContactComponent from './ContactComponent.vue'
+  import LinksComponent from './LinksComponent.vue'
+  import ProjectsComponent from './ProjectsComponent.vue'
 
   export default {
     name: 'app',
-    components: {NavbarComponent, PageHeadingComponent, StaffListComponent},
+    components: {NavbarComponent, PageHeadingComponent, IntroComponent, AboutComponent, ContactComponent, LinksComponent, ProjectsComponent},
     data () {
       return {
-        title: 'Przemysław Półrolniczak',
-        subtitle: 'Junior Front-end Developer',
+        component: 'intro-component',
+      }
+    },
+    methods: {
+      updateView(tab) {
+        this.component = tab;
       }
     }
   }
@@ -28,7 +34,6 @@
 body {
   padding-left: 150px;
   background-color: #596770;
-  // background-color: #7C8B95
 }
 #app {
   // font-family: 'Avenir', Helvetica, Arial, sans-serif;
