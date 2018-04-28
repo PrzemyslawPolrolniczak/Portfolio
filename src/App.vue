@@ -25,6 +25,8 @@
     methods: {
       updateView(tab) {
         this.component = tab;
+        document.querySelector('body').className = '';
+        document.querySelector('body').classList.add(tab);
       }
     }
   }
@@ -34,6 +36,8 @@
 body {
   padding-left: 150px;
   background-color: #596770;
+  background: url(./assets/intro-bg.png) no-repeat center center fixed;
+  background-size: cover;
 }
 #app {
   // font-family: 'Avenir', Helvetica, Arial, sans-serif;
