@@ -24,7 +24,7 @@
     },
     methods: {
       updateView(tab) {
-        this.component = tab;
+        this.component = tab[0];
         document.querySelector('body').className = '';
         document.querySelector('body').classList.add(tab);
       }
@@ -33,37 +33,39 @@
 </script>
 
 <style lang="scss">
-body {
-  padding-left: 150px;
-  background-color: #596770;
-  background: url(./assets/intro-bg.png) no-repeat center center fixed;
-  background-size: cover;
-}
+@import './scss/variables.scss';
 #app {
+  transition: background-color 0.5s;
+  position: absolute;
+  margin-left: 150px;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: url(./assets/intro-bg.png) no-repeat center center fixed;
+  background-color: #31373c;
+  background-size: cover;
   // font-family: 'Avenir', Helvetica, Arial, sans-serif;
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #e2e2e2;
-  margin-top: 60px;
+  &.blue {
+      background: rgba($color: #D6C5A7, $alpha: 1.0);
+  }
+  &.red {
+      background: rgba($color: #B8B499, $alpha: 1.0);
+  }
+  &.green {
+      background: rgba($color: #98A886, $alpha: 1.0);
+  }
+  &.yellow {
+      background: rgba($color: #787B5C, $alpha: 1.0);
+  }
 }
 
 h1, h2 {
   font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
 }
 </style>

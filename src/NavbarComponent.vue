@@ -2,7 +2,7 @@
 <template>
     <nav>
         <div class="tab"
-            :class="[tab.color, tab.isActive]"
+            :class="[tab.background, tab.isActive]"
             @click="toggleActive(tab), changeTab(tab)" 
             v-for="tab in tabs" 
             :key="tab.id">
@@ -19,12 +19,12 @@
         data(){
             return {
                 tabs: [
-                    {text: 'Intro', icon: 'fa-home', color:'default', isActive: 'active', href: 'intro-component'},
-                    {text: 'O mnie', icon: 'fa-user-circle', color:'blue', isActive: '', href: 'about-component'},
-                    {text: 'Projekty', icon: 'fa-briefcase', color:'red', isActive: '', href: 'projects-component'},
-                    {text: 'Linki', icon: 'fa-link', color:'green', isActive: '', href: 'links-component'},
-                    {text: 'Kontakt', icon: 'fa-envelope', color:'yellow', isActive: '', href: 'contact-component'},
-                    {text: 'English', icon: 'fa-language', color:'', isActive: '', href: 'english'},
+                    {text: 'Intro', icon: 'fa-home', background:'default', isActive: 'active', href: 'intro-component'},
+                    {text: 'O mnie', icon: 'fa-user-circle', background:'blue', isActive: '', href: 'about-component'},
+                    {text: 'Projekty', icon: 'fa-briefcase', background:'red', isActive: '', href: 'projects-component'},
+                    {text: 'Linki', icon: 'fa-link', background:'green', isActive: '', href: 'links-component'},
+                    {text: 'Kontakt', icon: 'fa-envelope', background:'yellow', isActive: '', href: 'contact-component'},
+                    {text: 'English', icon: 'fa-language', background:'', isActive: '', href: 'english'},
                 ],
                 toggleActive(tab) {
                     this.tabs.forEach(element => {
@@ -36,7 +36,7 @@
         },
         methods: {
             changeTab(tab) {
-                this.$emit('changeTab', tab.href);
+                this.$emit('changeTab', [tab.href, tab.background]);
             }
         }
     }
@@ -44,6 +44,8 @@
 
 
 <style scoped lang="scss">
+@import './scss/variables.scss';
+
     nav {
         position: fixed;
         background-color: #31373c;
@@ -78,6 +80,7 @@
                 &:hover {
                     padding-left: 0;
                     background-color: #212121;
+                    color: $color1;
                 }
             }
             i {
@@ -88,36 +91,31 @@
                 cursor: initial;
                 padding-left: 20px;
                 color: #31373c !important;
+                background-color: rgba($color: $color1, $alpha: 1.0);
                 &.blue {
-                    background-color: rgba($color: #00B3FF, $alpha: 1.0)
+                    background-color: rgba($color: $color2, $alpha: 1.0)
                 }
                 &.red {
-                    background-color: rgba($color: #EF233C, $alpha: 1.0)
+                    background-color: rgba($color: $color3, $alpha: 1.0)
                 }
                 &.green {
-                    background-color: rgba($color: #91CB3E, $alpha: 1.0)
+                    background-color: rgba($color: $color4, $alpha: 1.0)
                 }
                 &.yellow {
-                    background-color: rgba($color: #F5B700, $alpha: 1.0)
-                }
-                &.default {
-                    background-color: rgba($color: #FFF, $alpha: 1.0)
+                    background-color: rgba($color: $color5, $alpha: 1.0)
                 }
             }
             &.blue:hover {
-                color: #00B3FF;
+                color: $color2;
             }
             &.red:hover {
-                color: #EF233C;
+                color: $color3;
             }
             &.green:hover {
-                color: #91CB3E;
+                color: $color4;
             }
             &.yellow:hover {
-                color: #F5B700;
-            }
-            &.default:hover {
-                color: #fff;
+                color: $color5;
             }
         }
     }

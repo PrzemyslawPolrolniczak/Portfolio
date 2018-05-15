@@ -1,8 +1,6 @@
 <template>
     <div class="hero">
         <div class="corner-border left-top"></div>
-        <div class="corner-border right-top"></div>
-        <div class="corner-border left-bottom"></div>
         <div class="corner-border right-bottom"></div>
         <h1>{{ name }} <span>{{ surname }}</span></h1>
         <h2>{{ subtitle }}</h2>
@@ -21,7 +19,6 @@
             }
         }
     }
-
 </script>
 
 
@@ -32,7 +29,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-40%, -50%);
+    transform: translate(-50%, -50%);
     display: inline-block;
     color: #363636;
     background-color: rgba(255, 255, 255, 0.2);
@@ -53,19 +50,6 @@
             left: -5px;
             top: -5px;
         }
-        &.left-bottom {
-            clip-path: polygon(0 100%, 0 0, 100% 100%);
-            left: -5px;
-            bottom: -5px;
-            display: none;
-        }
-        &.right-top {
-            display: none;
-            border-color: #a2a2a2;
-            clip-path: polygon(100% 0, 0 0, 100% 100%);
-            right: -5px;
-            top: -5px;
-        }
         &.right-bottom {
             clip-path: polygon(0 100%, 100% 0, 100% 100%);
             right: -5px;
@@ -73,6 +57,4 @@
         }
     }
 }
-
-
 </style>
