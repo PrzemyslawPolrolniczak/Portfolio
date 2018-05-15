@@ -34,7 +34,7 @@
     }
     .content-box {
         padding-left: 50px;
-        background-color: #596770;
+        background-color: #31373c;
         position: absolute;
         left: 50%;
         top: 50%;
@@ -42,7 +42,7 @@
         width: 80%;
         height: 80%;
         .mini-navbar {
-            background-color: #31373c;
+            background-color: $color2;
             position: fixed;
             top: 0;
             left: 0px;
@@ -67,6 +67,8 @@
         }
         .photo {
             img {
+                padding: 5px;
+                border: 1px solid $color2;
                 max-width: 50%;
             }
         }
