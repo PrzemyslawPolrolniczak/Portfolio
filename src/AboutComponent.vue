@@ -27,51 +27,27 @@
 
 <style scoped lang="scss">
 @import './scss/variables.scss';
+@import './scss/content_box.scss';
 
-    h1 {
-        font-size: 55px;
-        line-height: 100px;
+.mini-navbar {
+    background-color: $color2;
+}
+.container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    .text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+        padding-right: 20%;
     }
-    .content-box {
-        padding-left: 50px;
-        background-color: #31373c;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 80%;
-        height: 80%;
-        .mini-navbar {
-            background-color: $color2;
-            position: fixed;
-            top: 0;
-            left: 0px;
-            bottom: 0;
-            width: 51px;
-        }
-        .content {
-            overflow-y: auto;
-            width: 100%;
-            height: 100%;
+    .photo {
+        img {
+            padding: 5px;
+            border: 1px solid $color2;
+            max-width: 50%;
         }
     }
-    .container {
-        display: grid;
-        grid-template-columns: 50% 50%;
-        .text {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: left;
-            padding-right: 20%;
-        }
-        .photo {
-            img {
-                padding: 5px;
-                border: 1px solid $color2;
-                max-width: 50%;
-            }
-        }
-    }
-    
+}
 </style>

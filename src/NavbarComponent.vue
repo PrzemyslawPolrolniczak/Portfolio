@@ -19,11 +19,11 @@
         data(){
             return {
                 tabs: [
-                    {text: 'Intro', icon: 'fa-home', background:'default', isActive: 'active', href: 'intro-component'},
-                    {text: 'O mnie', icon: 'fa-user-circle', background:'blue', isActive: '', href: 'about-component'},
-                    {text: 'Projekty', icon: 'fa-briefcase', background:'red', isActive: '', href: 'projects-component'},
-                    {text: 'Linki', icon: 'fa-link', background:'green', isActive: '', href: 'links-component'},
-                    {text: 'Kontakt', icon: 'fa-envelope', background:'yellow', isActive: '', href: 'contact-component'},
+                    {text: 'Intro', icon: 'fa-home', background:'color1', isActive: 'active', href: 'intro-component'},
+                    {text: 'O mnie', icon: 'fa-user-circle', background:'color2', isActive: '', href: 'about-component'},
+                    {text: 'Projekty', icon: 'fa-briefcase', background:'color3', isActive: '', href: 'projects-component'},
+                    {text: 'Linki', icon: 'fa-link', background:'color4', isActive: '', href: 'links-component'},
+                    {text: 'Kontakt', icon: 'fa-envelope', background:'color5', isActive: '', href: 'contact-component'},
                     {text: 'English', icon: 'fa-language', background:'', isActive: '', href: 'english'},
                 ],
                 toggleActive(tab) {
@@ -37,7 +37,7 @@
         methods: {
             changeTab(tab) {
                 this.$emit('changeTab', [tab.href, tab.background]);
-            }
+            },
         }
     }
 </script>
@@ -92,29 +92,29 @@
                 padding-left: 20px;
                 color: #31373c !important;
                 background-color: rgba($color: $color1, $alpha: 1.0);
-                &.blue {
+                &.color2 {
                     background-color: rgba($color: $color2, $alpha: 1.0)
                 }
-                &.red {
+                &.color3 {
                     background-color: rgba($color: $color3, $alpha: 1.0)
                 }
-                &.green {
+                &.color4 {
                     background-color: rgba($color: $color4, $alpha: 1.0)
                 }
-                &.yellow {
+                &.color5 {
                     background-color: rgba($color: $color5, $alpha: 1.0)
                 }
             }
-            &.blue:hover {
+            &.color2:hover {
                 color: $color2;
             }
-            &.red:hover {
+            &.color3:hover {
                 color: $color3;
             }
-            &.green:hover {
+            &.color4:hover {
                 color: $color4;
             }
-            &.yellow:hover {
+            &.color5:hover {
                 color: $color5;
             }
         }

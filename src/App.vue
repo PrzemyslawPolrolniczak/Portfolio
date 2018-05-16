@@ -20,6 +20,7 @@
     data () {
       return {
         component: 'intro-component',
+        themeColor: '$color1'
       }
     },
     methods: {
@@ -27,6 +28,7 @@
         this.component = tab[0];
         document.querySelector('body').className = '';
         document.querySelector('body').classList.add(tab);
+        this.themeColor = '$' + tab[1];
       }
     }
   }
